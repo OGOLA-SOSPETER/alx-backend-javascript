@@ -1,38 +1,31 @@
-const assert = require('assert');
-const calculateNumber = require('./1-calcul');
+const assert = require("assert");
+const { it, describe } = require("mocha");
+const calculateNumber = require("./1-calcul");
 
-describe('calculateNumber', () => {
-  describe('type SUM', () => {
-    it('should return the sum of two rounded numbers', () => {
-      assert.strictEqual(calculateNumber('SUM', 1.4, 2.6), 4);
-      assert.strictEqual(calculateNumber('SUM', 3.8, 4.2), 8);
-      assert.strictEqual(calculateNumber('SUM', -1.4, -2.6), -4);
-      assert.strictEqual(calculateNumber('SUM', -3.8, -4.2), -8);
-      assert.strictEqual(calculateNumber('SUM', 1.5, 2.5), 4);
-      assert.strictEqual(calculateNumber('SUM', 3.5, 4.5), 8);
-      assert.strictEqual(calculateNumber('SUM', -1.5, -2.5), -4);
-      assert.strictEqual(calculateNumber('SUM', -3.5, -4.5), -8);
-      assert.strictEqual(calculateNumber('SUM', 0, 0), 0);
+describe("calculateNumber()", function() {
+
+    it(`checking if numbers round`, function() {
+      const res = calculateNumber("SUM", 1, 2);
+      assert.strictEqual(res, 3);
     });
-  });
-
-  describe('type SUBTRACT', () => {
-    it('should return the subtraction of two rounded numbers', () => {
-      assert.strictEqual(calculateNumber('SUBTRACT', 1.4, 2.6), -2);
-      assert.strictEqual(calculateNumber('SUBTRACT', 3.8, 4.2), 0);
-      assert.strictEqual(calculateNumber('SUBTRACT', -1.4, -2.6), 2);
-      assert.strictEqual(calculateNumber('SUBTRACT', -3.8, -4.2), 0);
-      assert.strictEqual(calculateNumber('SUBTRACT', 1.5, 2.5), -1);
-      assert.strictEqual(calculateNumber('SUBTRACT', 3.5, 4.5), 0);
-      assert.strictEqual(calculateNumber('SUBTRACT', -1.5, -2.5), 1);
-      assert.strictEqual(calculateNumber('SUBTRACT', -3.5, -4.5), 0);
-      assert.strictEqual(calculateNumber('SUBTRACT', 0, 0), 0);
+    it(`checking if numbers round`, function() {
+      const res = calculateNumber("SUBTRACT", 1.4, 2.2);
+      assert.strictEqual(res, -1);
     });
-  });
-
-  describe('type DIVIDE', () => {
-    it('should return the division of two rounded numbers', () => {
-      assert.strictEqual(calculateNumber('DIVIDE', 10, 3), 3);
-      assert.strictEqual(calculateNumber('DIVIDE', 10, 2), 5);
-      assert.strictEqual(calculateNumber('DIVIDE', -10, 3), -
-
+    it(`checking if numbers round`, function() {
+      const res = calculateNumber("SUBTRACT", 4.9, 2.7);
+      assert.strictEqual(res, 2);
+    });
+    it(`checking if numbers round`, function() {
+      const res = calculateNumber("DIVIDE", 4, 2);
+      assert.strictEqual(res, 2);
+    });
+    it(`checking if numbers round`, function() {
+      const res = calculateNumber("DIVIDE", 1.7, 0);
+      assert.strictEqual(res, "Error");
+    });
+    it(`checking if numbers round`, function() {
+      const res = calculateNumber("DIVIDE", 1.4, 4.6);
+      assert.strictEqual(res, 0.2);
+    });
+});
