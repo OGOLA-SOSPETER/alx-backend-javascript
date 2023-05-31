@@ -6,6 +6,7 @@ interface Teacher{
   location: string,
   [propName: string]: any,
   }
+
  
 interface Directors extends Teacher{
   numberOfReports: number
@@ -20,3 +21,5 @@ interface classInterface {
   workOnHomework(): string;
   displayName(): string;
 }
+
+
