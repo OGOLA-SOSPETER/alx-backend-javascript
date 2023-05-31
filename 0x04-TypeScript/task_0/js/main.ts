@@ -7,16 +7,16 @@ location: string;
 
 const studentsList = Student[] = [
 {
-firstname: "Joe",
-lastName: "Doe",
+firstname: "Pauline",
+lastName: "James",
 age:20,
-location: "New York"
+location: "Kenya"
 },
 {
-firstName: "Jane",
-lastName: "Smith",
+firstName: "Peter",
+lastName: "Johns",
 age:22,
-location: "Los Angeles"
+location: "Kenya"
 }
 ];
 
