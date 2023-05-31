@@ -14,7 +14,7 @@ location: "Kenya"
 },
 {
 firstName: "Peter",
-lastName: "Johns",
+lastName: "Johnson",
 age:22,
 location: "Kenya"
 }
